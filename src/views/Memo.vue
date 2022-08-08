@@ -1,10 +1,28 @@
 <template>
   <div class="memo">
-    <div><h4>Color Diary</h4><h6>2022-08-01</h6></div>
-    <div><h4>이게 뭔지 기억이나 할까</h4><h6>2022-08-01</h6></div>
+    <div v-for="test in tests"><h4>{{test.title}}</h4><h6>{{test.date}}</h6></div>
   </div>
-  <div>+</div>
+  <div @click="test()">+</div>
 </template>
+
+<script>
+    import {connectToMongo, findByEmail} from '@/mongoose'
+    export default {
+        data() {
+            return{
+                 tests : [{title: 'test', date: '2021-08-22'},
+                 {title: 'test2', date: '2021-08-22'},
+                 {title: 'test3', date: '2021-08-22'}]
+            }   
+        },
+        methods: {
+            test() {
+                connectToMongo();
+                console.log("test")
+            }
+        }
+    }
+</script>
 
 <style>
   .memo {
