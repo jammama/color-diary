@@ -1,7 +1,7 @@
 <template>
   
   <div class="memo">
-    <input value="email">
+    <div>ddd</div>
     <div v-for="test in tests"><h4>{{test.title}}</h4><h6>{{test.date}}</h6></div>
   </div>
   <div @click="test()">+</div>
@@ -13,12 +13,9 @@ import axios from 'axios'
     export default {
         data() {
             return{
-                email : 'test',
-                tests : [
-                    {title: 'test', date: '2021-08-22'},
-                    {title: 'test2', date: '2021-08-22'},
-                    {title: 'test3', date: '2021-08-22'}
-                ]
+                 tests : [{title: 'test', date: '2021-08-22'},
+                 {title: 'test2', date: '2021-08-22'},
+                 {title: 'test3', date: '2021-08-22'}]
             }   
         },
         methods: {
